@@ -14,6 +14,7 @@ from config.loader import load_env
 from src.scrapers.fetcher import fetch_html
 from src.utils.html import extract_footer_text
 
+
 BROKER_URLS: List[str] = [
     "https://www.atfx.com",
     "https://www.cfiglobal.com",
@@ -77,6 +78,7 @@ async def main() -> None:
     urls = args.urls if args.urls else BROKER_URLS
     output_dir = Path(args.output_dir)
     await asyncio.gather(*(process_domain(url, output_dir) for url in urls))
+
 
 
 if __name__ == "__main__":
