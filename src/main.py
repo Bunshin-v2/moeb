@@ -1,13 +1,20 @@
-# src/main.py
+import sys
+from pathlib import Path
+from urllib.parse import urlparse
+import argparse
 import asyncio
-import os
-from typing import List
+from typing import List, Optional
 
-import aiohttp
-from bs4 import BeautifulSoup
-from dotenv import load_dotenv
+# Ensure project root is on the path when executed as a script
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.append(str(PROJECT_ROOT))
 
-# ← list your brokers here
+from config.loader import load_env
+from src.scrapers.fetcher import fetch_html
+from src.utils.html import extract_footer_text
+
+
 BROKER_URLS: List[str] = [
     "https://www.atfx.com",
     "https://www.cfiglobal.com",
@@ -31,30 +38,48 @@ BROKER_URLS: List[str] = [
     "https://www.legacyfx.com",
 ]
 
+def _domain_to_filename(url: str) -> str:
+    parsed = urlparse(url)
+    return parsed.netloc.replace(".", "_") + ".txt"
 
-async def fetch_footer(session: aiohttp.ClientSession, url: str):
-    try:
-        async with session.get(url, timeout=10) as resp:
-            text = await resp.text()
-            soup = BeautifulSoup(text, "html.parser")
-            footer = soup.find("footer")
-            return url, footer.get_text(" ", strip=True) if footer else None
-    except Exception:
-        return url, None
 
-async def main():
-    load_dotenv()  # pulls your SCRAPERAPI_KEY, etc.
-    headers = {}
-    # If you need to route through ScraperAPI/SerpAPI/BrightData proxy,
-    # you'd build your URL or headers here using os.getenv("SCRAPERAPI_KEY"), etc.
+def write_footer(domain: str, footer: Optional[str], output_dir: Path) -> None:
+    output_dir.mkdir(parents=True, exist_ok=True)
+    file_path = output_dir / _domain_to_filename(domain)
+    content = footer if footer else "Footer not found."
+    file_path.write_text(content)
+    print(f"Saved footer for {domain} to {file_path}")
 
-    async with aiohttp.ClientSession(headers=headers) as session:
-        tasks = [fetch_footer(session, url) for url in BROKER_URLS]
-        for url, footer in await asyncio.gather(*tasks):
-            if footer:
-                print(f"{url} → {footer}")
-            else:
-                print(f"footer not found or could not be fetched: {url}")
+
+async def process_domain(domain: str, output_dir: Path) -> None:
+    html = await fetch_html(domain)
+    footer = extract_footer_text(html) if html else None
+    write_footer(domain, footer, output_dir)
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="Fetch footers from broker sites")
+    parser.add_argument(
+        "--urls",
+        nargs="*",
+        help="Optional list of URLs to scrape. Defaults to built-in list.",
+    )
+    parser.add_argument(
+        "--output-dir",
+        default=str(PROJECT_ROOT / "data" / "footers"),
+        help="Directory to store footer text files.",
+    )
+    return parser.parse_args()
+
+
+async def main() -> None:
+    load_env()
+    args = parse_args()
+    urls = args.urls if args.urls else BROKER_URLS
+    output_dir = Path(args.output_dir)
+    await asyncio.gather(*(process_domain(url, output_dir) for url in urls))
+
+
 
 if __name__ == "__main__":
     asyncio.run(main())
