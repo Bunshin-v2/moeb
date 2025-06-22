@@ -1,0 +1,211 @@
+# Review Templates for NEEX Legal Contract Review System
+# Defines output formats and templates for various review components
+
+review_templates:
+  clause_analysis:
+    header: |
+      ## Clause #{clause_number}: {clause_title}
+      **Tags**: {tags}
+      **Risk Level**: {risk_level}
+      
+    content: |
+      ### 1. Key Points [Scope + Terms]:
+      {key_scope_terms}
+      
+      ### 2. Legal/Business Risk:
+      {legal_business_risk}
+      
+      ### 3. Negotiation Opportunity:
+      {negotiation_opportunity}
+      
+      ### 4. AI Investigatory Question:
+      {ai_investigatory_question}
+      
+      ---
+      
+  pause_checkpoint:
+    template: |
+      ## 🔄 PAUSE CHECKPOINT
+      
+      **Review Status**: Clauses {start_clause}--{end_clause} completed
+      **Tokens Processed**: ~{token_count}
+      **Section**: {section_name}
+      
+      **Options:**
+      1. ✅ Proceed with next clause set
+      2. 📊 Generate interim summary
+      3. 🔗 Cross-reference annexes/invoices
+      4. ⏸️ Pause for manual review
+      
+      **Findings Summary:**
+      - **Critical Issues**: {critical_count}
+      - **Material Risks**: {material_count}
+      - **Procedural Notes**: {procedural_count}
+      
+  risk_summary:
+    header: |
+      # 🚨 Risk Summary Report
+      **Contract**: {contract_title}
+      **Review Date**: {review_date}
+      **Total Clauses Analyzed**: {total_clauses}
+      
+    critical_section: |
+      ## Critical Issues (Immediate Attention Required)
+      {critical_issues}
+      
+    material_section: |
+      ## Material Risks (Recommended Negotiation)
+      {material_risks}
+      
+    procedural_section: |
+      ## Procedural Notes (Minor Improvements)
+      {procedural_notes}
+      
+    summary_by_tag: |
+      ## Risk Distribution by Category
+      - **TEC** (Technical): {tec_count} issues
+      - **LEG** (Legal): {leg_count} issues  
+      - **FIN** (Financial): {fin_count} issues
+      - **COM** (Compliance): {com_count} issues
+      - **IPX** (IP): {ipx_count} issues
+      - **TRM** (Termination): {trm_count} issues
+      - **DIS** (Dispute): {dis_count} issues
+      - **DOC** (Document): {doc_count} issues
+      - **EXE** (Execution): {exe_count} issues
+      - **EXT** (External): {ext_count} issues
+
+  negotiation_checklist:
+    header: |
+      # 📋 Negotiation Checklist
+      **Priority Items for Contract Amendment**
+      
+    item_template: |
+      ## {priority_level}: {negotiation_item}
+      
+      **Clause Reference**: {clause_reference}
+      **Current Text**: "{current_clause_excerpt}"
+      **Recommended Change**: {recommended_adjustment}
+      **Legal Rationale**: {legal_rationale}
+      **Business Impact**: {business_impact}
+      
+      ---
+      
+  suggestions_recommendations:
+    header: |
+      # 💡 Suggestions & Recommendations
+      **Strategic and Tactical Improvements**
+      
+    tactical_section: |
+      ## Tactical Clause Edits
+      {tactical_amendments}
+      
+    strategic_section: |
+      ## Strategic Insertions
+      {strategic_insertions}
+      
+    recommendation_template: |
+      ### {recommendation_title}
+      **Type**: {recommendation_type}
+      **Linked Clause**: {clause_linked}
+      **Suggestion**: {suggestion_text}
+      **Legal Rationale**: {legal_rationale}
+      **Implementation**: {implementation_notes}
+      
+  redline_comments:
+    header: |
+      # ✏️ Redline Comments (Draft Amendments)
+      **For Word Document Integration**
+      
+    comment_template: |
+      **Clause {clause_number}**: {clause_title}
+      
+      **Original Text**:
+      > {original_text_excerpt}
+      
+      **Suggested Redline**:
+      {redline_suggestion}
+      
+      **Reason for Change**: {reason_for_change}
+      
+      ---
+      
+  executive_summary:
+    template: |
+      # 📊 Executive Summary
+      **Contract Review Completion Report**
+      
+      ## Overview
+      - **Document**: {contract_title}
+      - **Review Completed**: {completion_date}
+      - **Total Clauses**: {total_clauses}
+      - **Review Duration**: {review_duration}
+      
+      ## Key Findings
+      - **Critical Issues**: {critical_count} (require immediate attention)
+      - **Material Risks**: {material_count} (recommended for negotiation)
+      - **Procedural Items**: {procedural_count} (minor improvements)
+      
+      ## Risk Distribution
+      {risk_distribution_chart}
+      
+      ## Top 3 Priorities
+      1. **{priority_1_title}**: {priority_1_description}
+      2. **{priority_2_title}**: {priority_2_description}  
+      3. **{priority_3_title}**: {priority_3_description}
+      
+      ## Recommended Actions
+      {recommended_actions}
+      
+      ## Next Steps
+      {next_steps}
+
+# Email Templates
+email_templates:
+  completion_notification:
+    subject: "NEEX Legal Review Complete: {contract_title}"
+    body: |
+      Legal review completed for: {contract_title}
+      
+      Summary:
+      - Critical Issues: {critical_count}
+      - Material Risks: {material_count}
+      - Total Clauses: {total_clauses}
+      
+      Full report attached.
+      
+      Next steps: {next_steps}
+
+# Report Formats
+output_formats:
+  html:
+    css_classes:
+      critical: "alert alert-danger"
+      material: "alert alert-warning"  
+      procedural: "alert alert-info"
+      success: "alert alert-success"
+    
+  markdown:
+    emphasis:
+      critical: "**🚨 CRITICAL**"
+      material: "**⚠️ MATERIAL**"
+      procedural: "**ℹ️ PROCEDURAL**"
+      
+  json:
+    structure:
+      metadata: ["contract_title", "review_date", "total_clauses"]
+      findings: ["critical", "material", "procedural"]
+      recommendations: ["tactical", "strategic"]
+      
+# Token Management
+token_limits:
+  warning_threshold: 2500
+  pause_threshold: 3000
+  summary_trigger: 2800
+  
+# Clause Detection Patterns
+clause_patterns:
+  numbered: "^\\d+\\."
+  lettered: "^[a-zA-Z]\\."
+  section: "^Section\\s+\\d+"
+  article: "^Article\\s+\\d+"
+  paragraph: "^\\([a-zA-Z0-9]+\\)"

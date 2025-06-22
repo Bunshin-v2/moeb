@@ -1,0 +1,273 @@
+# Clause Definitions for NEEX Legal Contract Review System
+# Defines characteristics, patterns, and analysis criteria for each clause type
+
+clause_definitions:
+  TEC:  # Technical & Deliverables
+    full_name: "Technical & Deliverables"
+    description: "Scope, SLA, milestones, platform-specific items"
+    key_patterns:
+      - "deliverable"
+      - "milestone"
+      - "service level"
+      - "SLA"
+      - "uptime"
+      - "performance"
+      - "platform"
+      - "hosting"
+      - "software"
+      - "quality control"
+    risk_factors:
+      - "scope_creep"
+      - "undefined_deliverables"
+      - "unrealistic_timelines"
+      - "vague_quality_standards"
+    analysis_focus:
+      - "measurable_kpis"
+      - "approval_cycles"
+      - "revision_rounds"
+      - "change_order_protection"
+
+  LEG:  # Legal Protections
+    full_name: "Legal Protections"
+    description: "Jurisdiction, indemnity, rights/obligations"
+    key_patterns:
+      - "jurisdiction"
+      - "governing law"
+      - "indemnif"
+      - "liability"
+      - "breach"
+      - "default"
+      - "termination"
+      - "warranty"
+      - "representation"
+    risk_factors:
+      - "asymmetric_power"
+      - "unlimited_liability"
+      - "weak_indemnification"
+      - "unclear_jurisdiction"
+    analysis_focus:
+      - "dispute_resolution"
+      - "liability_caps"
+      - "indemnity_scope"
+      - "breach_remedies"
+
+  FIN:  # Financial & Commercial Terms
+    full_name: "Financial & Commercial Terms"
+    description: "Payment, fees, penalties, currency clauses"
+    key_patterns:
+      - "payment"
+      - "invoice"
+      - "fee"
+      - "cost"
+      - "penalty"
+      - "refund"
+      - "currency"
+      - "exchange rate"
+      - "USDT"
+      - "USDC"
+      - "cryptocurrency"
+    risk_factors:
+      - "payment_delays"
+      - "currency_fluctuation"
+      - "hidden_costs"
+      - "unclear_penalties"
+    analysis_focus:
+      - "payment_schedules"
+      - "price_integrity"
+      - "crypto_anchoring"
+      - "suspension_rules"
+
+  COM:  # Compliance & Ethics
+    full_name: "Compliance & Ethics"
+    description: "Licensing, data, AML/CTF, privacy, standards"
+    key_patterns:
+      - "compliance"
+      - "regulation"
+      - "license"
+      - "AML"
+      - "CTF"
+      - "GDPR"
+      - "data protection"
+      - "privacy"
+      - "audit"
+      - "standard"
+    risk_factors:
+      - "regulatory_gaps"
+      - "compliance_violations"
+      - "data_breaches"
+      - "licensing_issues"
+    analysis_focus:
+      - "regulatory_alignment"
+      - "data_governance"
+      - "audit_requirements"
+      - "platform_compliance"
+
+  IPX:  # IP & Ownership
+    full_name: "IP & Ownership"
+    description: "Transfer, license, derivative rights"
+    key_patterns:
+      - "intellectual property"
+      - "copyright"
+      - "trademark"
+      - "patent"
+      - "license"
+      - "ownership"
+      - "derivative"
+      - "exclusive"
+      - "assignment"
+    risk_factors:
+      - "ip_loss"
+      - "unclear_ownership"
+      - "missing_license_back"
+      - "derivative_disputes"
+    analysis_focus:
+      - "ip_transfer_scope"
+      - "license_terms"
+      - "exclusivity_rights"
+      - "derivative_handling"
+
+  TRM:  # Termination & Breach
+    full_name: "Termination & Breach"
+    description: "Cause, no-cause exit, breach remedies"
+    key_patterns:
+      - "termination"
+      - "breach"
+      - "default"
+      - "cure period"
+      - "notice"
+      - "cause"
+      - "convenience"
+      - "exit"
+    risk_factors:
+      - "unilateral_termination"
+      - "no_cure_period"
+      - "harsh_penalties"
+      - "unclear_breach_definition"
+    analysis_focus:
+      - "termination_triggers"
+      - "cure_periods"
+      - "notice_requirements"
+      - "post_termination_obligations"
+
+  DIS:  # Dispute Resolution
+    full_name: "Dispute Resolution"
+    description: "Arbitration, mediation, governing law"
+    key_patterns:
+      - "dispute"
+      - "arbitration"
+      - "mediation"
+      - "court"
+      - "litigation"
+      - "resolution"
+      - "jurisdiction"
+      - "venue"
+    risk_factors:
+      - "expensive_arbitration"
+      - "inconvenient_venue"
+      - "biased_resolution"
+      - "unclear_procedures"
+    analysis_focus:
+      - "resolution_mechanisms"
+      - "venue_selection"
+      - "cost_allocation"
+      - "enforcement_provisions"
+
+  DOC:  # Document Control
+    full_name: "Document Control"
+    description: "Annexes, amendments, version control"
+    key_patterns:
+      - "document"
+      - "annex"
+      - "appendix"
+      - "amendment"
+      - "modification"
+      - "version"
+      - "exhibit"
+      - "schedule"
+    risk_factors:
+      - "inconsistent_documents"
+      - "unclear_precedence"
+      - "missing_annexes"
+      - "version_conflicts"
+    analysis_focus:
+      - "document_hierarchy"
+      - "amendment_procedures"
+      - "version_control"
+      - "reference_integrity"
+
+  EXE:  # Execution & Signature
+    full_name: "Execution & Signature"
+    description: "Signatories, digital execution, timestamps"
+    key_patterns:
+      - "signature"
+      - "execution"
+      - "authority"
+      - "signatory"
+      - "digital"
+      - "electronic"
+      - "timestamp"
+      - "effective date"
+    risk_factors:
+      - "unauthorized_signatures"
+      - "invalid_execution"
+      - "missing_authority"
+      - "timing_disputes"
+    analysis_focus:
+      - "signatory_authority"
+      - "execution_validity"
+      - "effective_dates"
+      - "digital_compliance"
+
+  EXT:  # External Dependencies
+    full_name: "External Dependencies"
+    description: "Invoices, supporting docs, third-party terms"
+    key_patterns:
+      - "external"
+      - "third party"
+      - "vendor"
+      - "supplier"
+      - "invoice"
+      - "supporting"
+      - "reference"
+      - "dependency"
+    risk_factors:
+      - "third_party_failures"
+      - "missing_dependencies"
+      - "external_changes"
+      - "integration_issues"
+    analysis_focus:
+      - "dependency_mapping"
+      - "third_party_risks"
+      - "integration_requirements"
+      - "fallback_provisions"
+
+# Analysis Templates
+analysis_templates:
+  interpretation:
+    template: "This clause establishes {function} by {mechanism}. Key terms include {key_terms}."
+    
+  exposure:
+    template: "Primary risks: {risks}. Potential exposure: {exposure_level}. Mitigation: {current_protections}."
+    
+  opportunity:
+    template: "Negotiation opportunities: {opportunities}. Recommended changes: {recommendations}."
+    
+  investigatory_question:
+    template: "Key question: {question}? Consider: {considerations}."
+
+# Risk Assessment Levels
+risk_levels:
+  CRITICAL:
+    score_range: [8, 10]
+    description: "Immediate legal/financial threat requiring urgent attention"
+    action_required: "Must address before signing"
+    
+  MATERIAL:
+    score_range: [5, 7]
+    description: "Significant risk that should be negotiated"
+    action_required: "Strong recommendation to address"
+    
+  PROCEDURAL:
+    score_range: [1, 4]
+    description: "Minor issues or process improvements"
+    action_required: "Consider addressing if time permits"

@@ -1,0 +1,161 @@
+# NEEX Legal Contract Review Blueprint Configuration
+# Based on NEEX LEGAL CONTRACT REVIEW EXECUTION BLUEPRINT
+# For: Service & Deliverables Contracts (Structure 1)
+
+neex_legal_contract_review_blueprint:
+  structure_type: "Service & Deliverables Contracts"
+  version: "1.0"
+  
+  applicable_to:
+    - "Neex Limited (all entities)"
+    - "Service Providers"
+  
+  context: |
+    Legal-contract review framework designed for high-exposure service
+    agreements where third-party deliverables, marketing visibility, or
+    regulated output is involved.
+    Applied to contracts such as: marketing services, consulting
+    agreements, PR retainers, freelance service providers, etc.
+  
+  purpose: |
+    To ensure complete clause-by-clause review, proactive risk detection,
+    and AI-assistive contract interrogation that ensures legal
+    defensibility, commercial clarity, and compliance readiness.
+  
+  review_dimensions:
+    technical_scope:
+      description: "Full breakdown of deliverables, SLA metrics, quality standards, and timelines."
+    legal_protections:
+      description: "Review of jurisdiction, indemnities, asymmetries, breach logic, and default rights."
+    financial_commercials:
+      description: "Verification of pricing logic, payment terms, crypto clauses, penalties, and invoice matching."
+    compliance_standards:
+      description: "Check alignment with global regulatory ethics, AML/CTF frameworks, IP laws, and data governance norms."
+  
+  execution_strategy:
+    clause_analysis_method:
+      - "Sequential clause-by-clause"
+      - "No clause skipping permitted"
+      - "Each clause receives: interpretation, exposure, remedy, negotiation lever"
+    
+    pause_triggers:
+      every_n_clauses: 3
+      every_n_tokens: 3000
+      at_section_boundary: true
+    
+    output_structure_per_clause:
+      - "clause_title"
+      - "key_scope_terms"
+      - "legal_risk_analysis"
+      - "negotiation_opportunity"
+      - "ai_investigatory_question"
+
+# Clause Tagging System
+clause_tagging_system:
+  description: "Tags applied to each clause to allow filtering, cross-referencing, and escalation during legal review."
+  
+  tags:
+    TEC: "Technical & Deliverables"
+    LEG: "Legal Protections"
+    FIN: "Financial & Commercial Terms"
+    COM: "Compliance & Ethics"
+    IPX: "IP & Ownership"
+    TRM: "Termination & Breach"
+    DIS: "Dispute Resolution"
+    DOC: "Document Control"
+    EXE: "Execution & Signature"
+    EXT: "External Dependencies"
+
+# Modular Clause Checklist
+modular_clause_checklist:
+  core_components:
+    intro_recitals: true
+    definitions: true
+    scope_of_work: "TEC"
+    service_standards: "TEC"
+    deliverables_and_cycles: "TEC"
+    payment_terms: "FIN"
+    currency_conversion_method: "FIN"
+    milestone_schedule: "TEC"
+    term_and_renewal: "TRM"
+    termination_triggers: "TRM"
+    breach_and_remedies: "TRM"
+  
+  risk_and_liability_clauses:
+    indemnification: "LEG"
+    liability_limitations: "LEG"
+    reps_and_warranties: "LEG"
+    force_majeure: "LEG"
+    third_party_risk: "EXT"
+  
+  ownership_and_confidentiality:
+    ip_assignment: "IPX"
+    confidentiality_terms: "COM"
+    post_termination_clauses: "LEG"
+  
+  compliance_and_legal_formality:
+    regulatory_compliance_statement: "COM"
+    doc_reference_controls: "DOC"
+    governing_law_clause: "DIS"
+    dispute_resolution_mechanism: "DIS"
+    annex_and_appendix_clause: "DOC"
+    execution_clause: "EXE"
+
+# Executional Flow Configuration
+executional_flow:
+  clause_analysis_sequence:
+    description: "Each clause must be processed in order of appearance using a consistent review logic."
+    steps:
+      - "extract_clause_title"
+      - "identify_scope_and_function"
+      - "assess_risk_exposure"
+      - "determine_negotiation_potential"
+      - "formulate_ai_investigatory_question"
+  
+  output_per_clause:
+    format:
+      clause_number: "auto-increment or manual reference"
+      clause_title: "string"
+      key_scope_terms: "bullet points"
+      legal_business_risk: "text analysis"
+      negotiation_opportunity: "text analysis"
+      ai_investigatory_question: "string"
+      tags: "one or more from clause_tagging_system"
+  
+  pause_checkpoints:
+    trigger_conditions:
+      clause_count: 3
+      token_count: 3000
+      logical_section_end: true
+    pause_prompt: |
+      "PAUSE CHECKPOINT: Review complete for current segment. Proceed with
+      next clauses, summarize findings, or initiate cross-reference with
+      annexes/invoices?"
+  
+  end_of_review_appendices:
+    generate_after_clause_review: true
+    components:
+      risk_summary:
+        format:
+          severity_levels: ["Critical", "Material", "Procedural"]
+          tag_sorted: true
+      
+      negotiation_checklist:
+        fields:
+          - "clause_reference"
+          - "negotiation_item"
+          - "current_clause_text_excerpt"
+          - "recommended_adjustment"
+      
+      suggestions_and_recommendations:
+        format:
+          recommendation_type: ["Tactical Clause Edit", "Strategic Insertion"]
+          clause_linked: true
+          legal_rationale: true
+      
+      redline_comment_list:
+        fields:
+          - "clause_number"
+          - "original_text_excerpt"
+          - "redline_suggestion"
+          - "reason_for_change"
