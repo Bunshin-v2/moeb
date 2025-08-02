@@ -1,0 +1,44 @@
+HIGH RISK CONTRACT - TEST ONLY
+
+This Agreement contains multiple high-risk provisions for testing purposes.
+
+1. UNLIMITED LIABILITY
+   1.1 Service Provider accepts UNLIMITED LIABILITY for any and all claims.
+   1.2 There is NO CAP on damages of any kind.
+   1.3 This includes consequential, indirect, and punitive damages.
+
+2. ONE-SIDED INDEMNIFICATION
+   2.1 Service Provider shall indemnify Client for ANY reason.
+   2.2 Client has NO indemnification obligations whatsoever.
+   2.3 Indemnification includes legal fees and all costs.
+
+3. UNFAIR PAYMENT TERMS
+   3.1 Client may withhold payment for any reason.
+   3.2 No interest on late payments to Provider.
+   3.3 Provider must pay 5% daily interest on any amounts owed.
+
+4. IMMEDIATE TERMINATION
+   4.1 Client may terminate immediately without cause.
+   4.2 Provider requires 90 days notice to terminate.
+   4.3 No cure period for alleged breaches by Provider.
+
+5. NO WARRANTIES FROM CLIENT
+   5.1 Client provides information "AS IS" with no warranties.
+   5.2 Provider warrants perfection in all deliverables.
+   5.3 Warranties survive forever with no time limit.
+
+6. BIASED DISPUTE RESOLUTION
+   6.1 All disputes decided solely by Client's choice of arbitrator.
+   6.2 Arbitration must occur in Client's headquarters.
+   6.3 Provider pays all arbitration costs regardless of outcome.
+
+7. DRACONIAN IP PROVISIONS
+   7.1 All Provider pre-existing IP transfers to Client.
+   7.2 Provider cannot use any learnings from this engagement.
+   7.3 Non-compete extends globally for 10 years.
+
+8. FORCE MAJEURE
+   8.1 Force majeure excuses Client but not Provider.
+   8.2 Provider must perform regardless of impossibility.
+
+THIS IS A TEST DOCUMENT ONLY - DO NOT USE IN REAL CONTRACTS

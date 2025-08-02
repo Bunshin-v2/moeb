@@ -1,0 +1,27 @@
+# Sample Service Agreement for Testing
+
+This Service Agreement ("Agreement") is entered into as of January 1, 2025 between Test Client Corp. ("Client") and Test Provider Inc. ("Provider").
+
+## 1. Services
+Provider shall provide software development services as requested by Client.
+
+## 2. Payment
+Client shall pay Provider $5,000 per month, due within 30 days of invoice.
+
+## 3. Term
+This Agreement shall continue for one year and automatically renew unless terminated.
+
+## 4. Termination
+Either party may terminate with 30 days written notice.
+
+## 5. Intellectual Property
+All work product shall be owned by Client upon payment.
+
+## 6. Confidentiality
+Both parties shall maintain confidentiality of proprietary information.
+
+## 7. Limitation of Liability
+Neither party's liability shall exceed the fees paid in the prior 12 months.
+
+## 8. Governing Law
+This Agreement shall be governed by the laws of Delaware.

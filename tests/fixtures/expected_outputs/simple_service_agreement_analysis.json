@@ -1,0 +1,94 @@
+{
+  "metadata": {
+    "title": "Sample Service Agreement",
+    "parties": ["Test Client Corp.", "Test Provider Inc."],
+    "effective_date": "January 1, 2025",
+    "contract_type": "Service Agreement"
+  },
+  "clause_analyses": {
+    "1": {
+      "clause_id": "1",
+      "clause_text": "Provider shall provide software development services as requested by Client.",
+      "interpretation": "This clause establishes the service provider's obligation to deliver software development services based on the client's requirements.",
+      "exposure": "Vague scope could lead to scope creep and disputes over what services are included.",
+      "opportunity": "Define specific services, deliverables, and acceptance criteria in an exhibit or statement of work.",
+      "tags": ["COM", "TEC"],
+      "risk_level": "Material",
+      "risk_score": 6.5,
+      "risk_factors": ["Undefined scope", "No acceptance criteria"]
+    },
+    "2": {
+      "clause_id": "2", 
+      "clause_text": "Client shall pay Provider $5,000 per month, due within 30 days of invoice.",
+      "interpretation": "Sets fixed monthly payment of $5,000 with net 30 payment terms.",
+      "exposure": "No late payment penalties or interest specified.",
+      "opportunity": "Generally favorable payment terms, could add late payment interest.",
+      "tags": ["FIN"],
+      "risk_level": "Procedural",
+      "risk_score": 3.0,
+      "risk_factors": ["No late payment terms"]
+    },
+    "7": {
+      "clause_id": "7",
+      "clause_text": "Neither party's liability shall exceed the fees paid in the prior 12 months.",
+      "interpretation": "Mutual limitation of liability capped at 12 months of fees.",
+      "exposure": "May not cover catastrophic losses, but provides reasonable protection.",
+      "opportunity": "Consider carve-outs for gross negligence, willful misconduct, or IP infringement.",
+      "tags": ["LEG"],
+      "risk_level": "Material",
+      "risk_score": 5.5,
+      "risk_factors": ["No carve-outs specified"]
+    }
+  },
+  "risk_assessment": {
+    "overall_score": 5.8,
+    "category_scores": {
+      "Financial": 4.5,
+      "Legal": 6.5,
+      "Operational": 6.0,
+      "Compliance": 3.0,
+      "Reputational": 2.5,
+      "Strategic": 5.0
+    },
+    "critical_risks": [],
+    "material_risks": [
+      "Undefined scope of services",
+      "No acceptance criteria",
+      "Limited liability caps without carve-outs"
+    ],
+    "risk_summary": "Moderate risk contract with primary concerns around scope definition and standard liability limitations."
+  },
+  "negotiation_recommendations": [
+    {
+      "clause_id": "1",
+      "rule_name": "Undefined Scope",
+      "type": "clarification",
+      "priority": "High",
+      "suggested_change": "Add detailed Statement of Work as Exhibit A defining specific deliverables, milestones, and acceptance criteria",
+      "rationale": "Prevents scope creep and disputes over service expectations",
+      "alternative_approaches": [
+        "Reference agile methodology with defined sprint commitments",
+        "Include change order process for scope modifications"
+      ]
+    },
+    {
+      "clause_id": "7",
+      "rule_name": "Liability Cap Carve-outs",
+      "type": "addition",
+      "priority": "Medium",
+      "suggested_change": "Add standard carve-outs for gross negligence, willful misconduct, breach of confidentiality, and IP indemnification",
+      "rationale": "Ensures appropriate remedies remain available for serious breaches",
+      "alternative_approaches": [
+        "Negotiate higher cap for certain types of claims",
+        "Add insurance requirements"
+      ]
+    }
+  ],
+  "negotiation_summary": {
+    "total_recommendations": 5,
+    "critical_count": 0,
+    "high_count": 2,
+    "medium_count": 2,
+    "low_count": 1
+  }
+}
